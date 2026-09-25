@@ -1,6 +1,6 @@
 {
   "name": "asset-gen",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generate images with AI coding agents and print the generated file path.",
   "type": "commonjs",
   "bin": {

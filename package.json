@@ -1,15 +1,36 @@
 {
   "name": "image-gen",
   "version": "0.0.1",
-  "description": "CLI tool to generate images using codex",
-  "main": "index.js",
+  "description": "Generate images with the OpenAI Codex CLI and print the generated file path.",
+  "type": "commonjs",
+  "bin": {
+    "image-gen": "index.js"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test",
+    "test:pack": "npm pack --dry-run",
+    "prepublishOnly": "npm test"
   },
-  "bin":{
-   "image-gen":"./index.js"
+  "engines": {
+    "node": ">=22"
   },
-  "keywords": ["cli","codex","image","generation"],
+  "keywords": [
+    "ai",
+    "cli",
+    "codex",
+    "image",
+    "image-generation",
+    "openai"
+  ],
   "author": "Ashutosh Kumar <ashutosh@w3dev.in>",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }

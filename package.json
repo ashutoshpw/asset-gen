@@ -1,0 +1,15 @@
+{
+  "name": "image-gen",
+  "version": "0.0.1",
+  "description": "CLI tool to generate images using codex",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin":{
+   "image-gen":"./index.js"
+  },
+  "keywords": ["cli","codex","image","generation"],
+  "author": "Ashutosh Kumar <ashutosh@w3dev.in>",
+  "license": "MIT"
+}

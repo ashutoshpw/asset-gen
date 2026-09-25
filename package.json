@@ -33,11 +33,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ashutoshpw/image-gen.git"
+    "url": "git+https://github.com/ashutoshpw/asset-gen.git"
   },
-  "homepage": "https://github.com/ashutoshpw/image-gen#readme",
+  "homepage": "https://github.com/ashutoshpw/asset-gen#readme",
   "bugs": {
-    "url": "https://github.com/ashutoshpw/image-gen/issues"
+    "url": "https://github.com/ashutoshpw/asset-gen/issues"
   },
   "publishConfig": {
     "access": "public",

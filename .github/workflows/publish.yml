@@ -1,0 +1,46 @@
+name: Publish to npm
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: npm-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Publish package
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Use Node.js 24
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24.x'
+          registry-url: 'https://registry.npmjs.org'
+          package-manager-cache: false
+
+      - name: Install a trusted-publishing-compatible npm CLI
+        run: npm install --global npm@latest
+
+      - name: Show npm and package versions
+        run: |
+          npm --version
+          node -e "const pkg = require('./package.json'); console.log(pkg.name + '@' + pkg.version)"
+
+      - name: Run tests
+        run: npm test
+
+      - name: Verify package contents
+        run: npm run test:pack
+
+      - name: Publish to npm
+        run: npm publish --access public --registry=https://registry.npmjs.org/

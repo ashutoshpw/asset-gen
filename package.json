@@ -1,10 +1,10 @@
 {
-  "name": "image-gen",
+  "name": "asset-gen",
   "version": "0.0.1",
-  "description": "Generate images with the OpenAI Codex CLI and print the generated file path.",
+  "description": "Generate images with AI coding agents and print the generated file path.",
   "type": "commonjs",
   "bin": {
-    "image-gen": "index.js"
+    "asset-gen": "index.js"
   },
   "files": [
     "index.js",
@@ -21,6 +21,8 @@
   },
   "keywords": [
     "ai",
+    "asset",
+    "asset-generation",
     "cli",
     "codex",
     "image",
@@ -29,6 +31,14 @@
   ],
   "author": "Ashutosh Kumar <ashutosh@w3dev.in>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashutoshpw/image-gen.git"
+  },
+  "homepage": "https://github.com/ashutoshpw/image-gen#readme",
+  "bugs": {
+    "url": "https://github.com/ashutoshpw/image-gen/issues"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

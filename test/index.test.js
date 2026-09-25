@@ -61,7 +61,7 @@ test('the executable returns help with exit code 0', () => {
   });
 
   assert.equal(result.status, 0, result.stderr);
-  assert.match(result.stdout, /Usage:\n  image-gen --prompt/);
+  assert.match(result.stdout, /Usage:\n  asset-gen --prompt/);
   assert.equal(result.stderr, '');
 });
 
@@ -118,7 +118,7 @@ test('main reports a missing prompt', () => {
   assert.equal(exitCode, 1);
   assert.equal(stdout.content, '');
   assert.match(stderr.content, /--prompt \(-p\) is required/);
-  assert.match(stderr.content, /image-gen --help/);
+  assert.match(stderr.content, /asset-gen --help/);
 });
 
 test('parseArgs rejects unknown and positional arguments', () => {

@@ -1,8 +1,8 @@
-# image-gen
+# asset-gen
 
 Generate images with the [OpenAI Codex CLI](https://developers.openai.com/codex/cli) and print the generated image path.
 
-`image-gen` is a small command-line wrapper around `codex exec`. It sends your image description to Codex, asks it to return the generated file path, and writes that path to standard output so the command can be used in scripts.
+`asset-gen` is a small command-line wrapper around `codex exec`. It sends your image description to Codex, asks it to return the generated file path, and writes that path to standard output so the command can be used in scripts.
 
 ## Requirements
 
@@ -19,23 +19,23 @@ codex login
 
 Codex is supported on macOS and Linux. On Windows, use WSL2 or a native Codex installation that exposes a directly executable `codex` binary on `PATH`.
 
-## Install image-gen
+## Install asset-gen
 
 ```bash
-npm install -g image-gen
+npm install -g asset-gen
 ```
 
 Verify the installation:
 
 ```bash
-image-gen --help
-image-gen --version
+asset-gen --help
+asset-gen --version
 ```
 
 ## Usage
 
 ```text
-image-gen --prompt <text> [--model <model>]
+asset-gen --prompt <text> [--model <model>]
 ```
 
 ### Options
@@ -45,7 +45,7 @@ image-gen --prompt <text> [--model <model>]
 | `-p`, `--prompt <text>` | Description of the image to generate. Required unless showing help or version. |
 | `-m`, `--model <model>` | Codex model to use. Defaults to `gpt-6-luna`. |
 | `-h`, `--help` | Show help and exit successfully. |
-| `-V`, `--version` | Show the installed `image-gen` version. |
+| `-V`, `--version` | Show the installed `asset-gen` version. |
 
 The default model must be available to your Codex setup. If it is not, choose a model available to your account with `--model`.
 
@@ -54,25 +54,25 @@ The default model must be available to your Codex setup. If it is not, choose a 
 Generate an image with the default model:
 
 ```bash
-image-gen --prompt "A lighthouse during a storm"
+asset-gen --prompt "A lighthouse during a storm"
 ```
 
 Use the short options and override the model:
 
 ```bash
-image-gen -p "A watercolor fox in an autumn forest" -m gpt-6-luna
+asset-gen -p "A watercolor fox in an autumn forest" -m gpt-6-luna
 ```
 
 Capture the returned path in a shell variable:
 
 ```bash
-image_path=$(image-gen -p "A minimal desk setup")
-printf '%s\n' "$image_path"
+asset_path=$(asset-gen -p "A minimal desk setup")
+printf '%s\n' "$asset_path"
 ```
 
 ## How it works
 
-For each generation, `image-gen`:
+For each generation, `asset-gen`:
 
 1. Parses and validates the CLI options.
 2. Builds a prompt requesting the generated image path.
@@ -115,12 +115,12 @@ codex login
 The configured model may not be available to your Codex account. Select another model:
 
 ```bash
-image-gen -p "A mountain lake" --model <available-model>
+asset-gen -p "A mountain lake" --model <available-model>
 ```
 
 ### No image path found
 
-Codex completed without reporting a supported image path. Run the command again with a more specific image description and confirm that your Codex setup has the required image-generation tools available.
+Codex completed without reporting a supported image path. Run the command again with a more specific image description and confirm that your Codex setup has the required asset-generation tools available.
 
 ## Development
 

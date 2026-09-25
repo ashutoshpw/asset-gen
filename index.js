@@ -18,10 +18,10 @@ const VALUE_OPTIONS = new Set([
   '-V',
 ]);
 
-const HELP_TEXT = `image-gen - Generate images with Codex CLI
+const HELP_TEXT = `asset-gen - Generate images from the command line
 
 Usage:
-  image-gen --prompt <text> [--model <model>]
+  asset-gen --prompt <text> [--model <model>]
 
 Options:
   -p, --prompt <text>  Description of the image to generate (required)
@@ -30,8 +30,8 @@ Options:
   -V, --version        Show the installed version
 
 Examples:
-  image-gen -p "A lighthouse during a storm"
-  image-gen --prompt "A watercolor fox" --model ${DEFAULT_MODEL}`;
+  asset-gen -p "A lighthouse during a storm"
+  asset-gen --prompt "A watercolor fox" --model ${DEFAULT_MODEL}`;
 
 class UsageError extends Error {
   constructor(message) {
@@ -204,7 +204,7 @@ function main(args = process.argv.slice(2), dependencies = {}) {
     stderr.write(`Error: ${error.message}\n`);
 
     if (error instanceof UsageError) {
-      stderr.write("Run 'image-gen --help' for usage.\n");
+      stderr.write("Run 'asset-gen --help' for usage.\n");
     }
 
     return 1;
